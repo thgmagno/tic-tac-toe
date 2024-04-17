@@ -6,12 +6,20 @@ import { BsFillPeopleFill, BsRobot } from 'react-icons/bs'
 import { GrClose } from 'react-icons/gr'
 import { SelectDifficulty } from './SelectDifficulty'
 
-export function Modal() {
+interface Props {
+  onStartGame: () => void
+}
+
+export function Modal({ onStartGame }: Props) {
   const [modal, setModal] = useState(false)
   const [mode, setMode] = useState<'PvP' | 'PvAI'>('PvAI')
   const [difficulty, setDifficult] = useState<
     'easy' | 'medium' | 'hard' | null
   >(null)
+
+  const isInvalid = !difficulty && mode === 'PvAI'
+
+  const startGame = () => onStartGame()
 
   return (
     <>
@@ -60,7 +68,8 @@ export function Modal() {
               <Button
                 variant="bordered"
                 className="font-body text-xl md:text-2xl dark:text-black"
-                onClick={() => alert(`iniciando o jogo...`)}
+                onClick={startGame}
+                isDisabled={isInvalid}
               >
                 Iniciar
               </Button>
