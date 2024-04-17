@@ -5,7 +5,7 @@ import { Wrapper } from '@/components/Wrapper'
 export default function Home() {
   return (
     <>
-      <Title subtitle />
+      <Title />
       <Wrapper>
         <Game />
       </Wrapper>

@@ -32,27 +32,28 @@ export function Board({
   }
 
   return (
-    <>
+    <div className="rounded-xl border border-white/20 bg-black/60 p-4 shadow-2xl">
       <div className="mb-5 flex justify-between">
         <button
           onClick={goToHome}
-          className="font-body duration-400 relative right-2 flex items-center text-xl text-neutral-500 transition-colors hover:text-red-600 hover:underline"
+          className="relative right-2 flex items-center font-body text-xl text-neutral-500 transition-colors duration-400 hover:underline"
         >
-          <BiChevronLeft size={20} className="" />
+          <BiChevronLeft size={24} className="" />
           Deixar partida
         </button>
         <button
           onClick={resetGame}
-          className="font-body duration-400 relative left-2 flex items-center text-xl text-neutral-500 transition-colors hover:text-white hover:underline"
+          className="relative left-2 flex items-center font-body text-xl text-neutral-500 transition-colors duration-400 hover:underline"
         >
           Reiniciar
-          <BiRefresh size={20} className="ml-0.5" />
+          <BiRefresh size={24} className="ml-0.5" />
         </button>
       </div>
-      <div className="font-display grid grid-cols-3 grid-rows-3 gap-1.5">
+      <div className="grid grid-cols-3 grid-rows-3 font-display">
         {cells.map((cell, index) => (
           <Cell
             key={index}
+            index={index}
             value={cell}
             onClick={() => onCellClick(index)}
             winner={winner}
@@ -61,11 +62,11 @@ export function Board({
       </div>
       {winner && (
         <p
-          className={`font-body relative top-5 text-center text-2xl md:text-3xl ${color[winner]}`}
+          className={`relative top-2 flex min-h-14 items-center justify-center font-body text-2xl md:text-3xl ${color[winner]}`}
         >
           {message[winner]}
         </p>
       )}
-    </>
+    </div>
   )
 }

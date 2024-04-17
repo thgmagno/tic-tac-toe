@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Press_Start_2P as PressStart2P, VT323 } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
-import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import { Container } from '@/components/Container'
 
 const pressStart2P = PressStart2P({
@@ -31,10 +30,7 @@ export default function RootLayout({
     <html lang="pt-br" className={`${pressStart2P.variable} ${vt323.variable}`}>
       <body>
         <Providers>
-          <Container>
-            <ThemeSwitcher />
-            {children}
-          </Container>
+          <Container>{children}</Container>
         </Providers>
       </body>
     </html>

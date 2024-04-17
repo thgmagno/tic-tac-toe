@@ -21,19 +21,19 @@ export function SelectDifficulty({ difficulty, setDifficulty }: Props) {
       </span>
       <Button
         onClick={() => setDifficulty('easy')}
-        className={`${easy && 'bg-primary dark:bg-primaryDark dark:text-black'}`}
+        className={`${easy && 'bg-primary'}`}
       >
         Fácil
       </Button>
       <Button
         onClick={() => setDifficulty('medium')}
-        className={`${medium && 'bg-primary dark:bg-primaryDark dark:text-black'}`}
+        className={`${medium && 'bg-primary'}`}
       >
         Médio
       </Button>
       <Button
         onClick={() => setDifficulty('hard')}
-        className={`${hard && 'bg-primary dark:bg-primaryDark dark:text-black'}`}
+        className={`${hard && 'bg-primary'}`}
       >
         Difícil
       </Button>

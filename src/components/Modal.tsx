@@ -23,15 +23,16 @@ export function Modal({ onStartGame }: Props) {
 
   return (
     <>
-      <button
+      <Button
+        variant="faded"
         onClick={() => setModal(true)}
-        className="font-body max-w-40 animate-pulse text-xl md:text-2xl"
+        className="max-w-40 animate-pulse font-body text-xl md:text-2xl"
       >
         Começar o jogo
-      </button>
+      </Button>
       {modal && (
         <div className="modal">
-          <div className="font-body bg-secondaryDark relative flex flex-col rounded-lg border-2 p-2.5 text-lg dark:text-black">
+          <div className="relative flex flex-col rounded-lg border-2 bg-secondary p-2.5 font-body text-lg">
             <div className="flex justify-between">
               <div className="mr-16 flex space-x-2.5">
                 <button
@@ -67,7 +68,7 @@ export function Modal({ onStartGame }: Props) {
 
               <Button
                 variant="bordered"
-                className="font-body text-xl md:text-2xl dark:text-black"
+                className="font-body text-xl md:text-2xl"
                 onClick={startGame}
                 isDisabled={isInvalid}
               >
