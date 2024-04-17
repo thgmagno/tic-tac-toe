@@ -1,7 +1,14 @@
+import { Modal } from '@/components/Modal'
+import { Title } from '@/components/Title'
+import { Wrapper } from '@/components/Wrapper'
+
 export default function Home() {
   return (
-    <main>
-      <h1>Tic tac toe</h1>
-    </main>
+    <>
+      <Title subtitle />
+      <Wrapper>
+        <Modal />
+      </Wrapper>
+    </>
   )
 }

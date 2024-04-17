@@ -1,8 +1,21 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Press_Start_2P as PressStart2P, VT323 } from 'next/font/google'
 import './globals.css'
+import { Providers } from './providers'
+import { ThemeSwitcher } from '@/components/ThemeSwitcher'
+import { Container } from '@/components/Container'
 
-const inter = Inter({ subsets: ['latin'] })
+const pressStart2P = PressStart2P({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--display-font',
+})
+
+const vt323 = VT323({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--body-font',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +28,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-br" className={`${pressStart2P.variable} ${vt323.variable}`}>
+      <body>
+        <Providers>
+          <Container>
+            <ThemeSwitcher />
+            {children}
+          </Container>
+        </Providers>
+      </body>
     </html>
   )
 }

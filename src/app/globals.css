@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply max-w-sm mx-auto
+  }
+}
+
+@layer components {
+  .container {
+    @apply flex flex-col w-full h-screen py-5 md:py-10
+  }
+
+  .modal {
+    @apply fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center mx-auto bg-black/80
+  }
+}
