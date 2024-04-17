@@ -22,13 +22,13 @@ export function Board({
   const color = {
     X: 'text-green-600',
     O: 'text-red-600',
-    draw: '',
+    draw: 'text-white',
   }
 
   const message = {
     X: 'Jogador 1 ganhou!',
     O: 'Jogador 2 ganhou!',
-    draw: 'Empate!',
+    draw: 'Empatou!',
   }
 
   return (
